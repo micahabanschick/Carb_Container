@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'static_pages#welcome'
+  get 'static_pages/home'
   resources :days
   resources :meals
   resources :exercises
