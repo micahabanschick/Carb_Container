@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_195531) do
+ActiveRecord::Schema.define(version: 2021_01_25_221601) do
 
   create_table "days", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "exercises", force: :cascade do |t|
@@ -24,6 +25,8 @@ ActiveRecord::Schema.define(version: 2021_01_25_195531) do
     t.integer "calories_burned"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.integer "day_id"
   end
 
   create_table "foods", force: :cascade do |t|
@@ -38,8 +41,23 @@ ActiveRecord::Schema.define(version: 2021_01_25_195531) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "meal_foods", force: :cascade do |t|
+    t.integer "meal_id"
+    t.integer "food_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "meals", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+  end
+
+  create_table "user_foods", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "food_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
