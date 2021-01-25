@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :exercises
   resources :foods
   get 'sessions/new'
   get 'sessions/create'
