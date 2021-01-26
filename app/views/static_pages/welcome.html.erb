@@ -1,2 +1,15 @@
-<h1>StaticPages#welcome</h1>
-<p>Find me in app/views/static_pages/welcome.html.erb</p>
+<div class="theme-showcase" role="main">
+
+  <div class="left-pic">
+    <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8d29ya291dHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80.jpg" width="550" height="325">
+  </div>
+
+  <div class="right-info">
+    <h1>Welcome to Carb Container!</h1>
+    <div class="center">
+      <%= link_to "Sign In", signin_path, class: "btn btn-primary" %>
+      <%= link_to "Sign Up", new_user_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+
+</div>
