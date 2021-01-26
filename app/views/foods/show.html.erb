@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+
+<% if flash[:message] %>
+  <div class="center alert">
+    <p><%= flash[:message] %></p>
+  </div>
+<% end %>
+
+<div class="center">
+  <div class="info">
+    <% render 'food' %>
+    <p><%= link_to 'Edit', edit_food_path(@food) %></p>
+  </div>
+</div>
