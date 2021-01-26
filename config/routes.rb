@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :meals
   resources :exercises
   resources :foods
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
+  get '/signin', to: 'sessions#new', as: 'signin'
+  post '/session', to: 'sessions#create', as: 'session'
+  delete '/session', to: 'sessions#destroy'
   resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
