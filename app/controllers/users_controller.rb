@@ -6,6 +6,10 @@ class UsersController < ApplicationController
     #   @lifestyles = ["Sedentary", "Mildly Active", "Moderately Active", "Intensely Active"]
     end
 
+    def index 
+        @users = User.all 
+    end 
+
     def create
       if user = User.create user_params
         session[:user_id] = user.id
