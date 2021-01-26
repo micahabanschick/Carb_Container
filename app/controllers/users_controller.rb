@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
     skip_before_action :verify_user_is_authenticated, only: [:new,:create]
-    
+
     def new
       @user = User.new
+    #   @lifestyles = ["Sedentary", "Mildly Active", "Moderately Active", "Intensely Active"]
     end
 
     def create

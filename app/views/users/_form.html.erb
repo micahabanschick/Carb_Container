@@ -1,0 +1,54 @@
+<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
+      </h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :height, "Height (in inches)" %>
+    <br>
+    <%= f.number_field :height, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :weight, "Weight (in pounds)" %>
+    <br>
+    <%= f.number_field :weight, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :age, "Age" %>
+    <br>
+    <%= f.number_field :age, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :lifestyle, "Check box if you are a theme park owner" %>
+    <%= f.select :lifestyle, options_for_select(["Sedentary", "Mildly Active", "Moderately Active", "Intensely Active"]), class: "form-select-input" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <br>
+    <%= f.password_field :password, class: "form-control" %>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+
+<% end %>
