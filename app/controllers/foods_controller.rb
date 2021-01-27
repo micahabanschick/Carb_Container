@@ -5,6 +5,7 @@ class FoodsController < ApplicationController
   
     def show
       @food = Food.find_by(id: params[:id])
+      @user_food = @food.user_foods.build(user_id: current_user.id)
     end
   
     def new
@@ -15,6 +16,12 @@ class FoodsController < ApplicationController
       food = food.create(food_params)
       redirect_to food_path(food)
     end
+
+    def add
+        user_food = UserFood.create(user_id: current_user.id, food_id: params[:food_id])
+        message = user_food.consume
+        redirect_to user_path(user_food.user), flash: { message: message }
+    end 
   
     def edit
       @food = Food.find_by(id: params[:id])
