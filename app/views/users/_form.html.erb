@@ -20,13 +20,18 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :height, "Height (in inches)" %>
+    <%= f.label :lifestyle, "Select Sex" %>
+    <%= f.select :lifestyle, options_for_select(["M", "F"]), class: "form-select-input" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :height, "Height (in m)" %>
     <br>
     <%= f.number_field :height, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :weight, "Weight (in pounds)" %>
+    <%= f.label :weight, "Weight (in Kg)" %>
     <br>
     <%= f.number_field :weight, class: "form-control" %>
   </div>
