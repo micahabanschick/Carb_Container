@@ -1,4 +1,8 @@
 <h1>Food Index</h1>
-<% @foods.each do |@food| %>
-  <% render 'food' %>
+
+<p><%= link_to 'Add New Food', new_user_food_path(current_user) %></p>
+
+<% @foods.each do |food| %>
+  <p><%= link_to food.name, user_food_path(current_user, food) %></p>
+  <br>
 <% end %>

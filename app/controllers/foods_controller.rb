@@ -10,10 +10,11 @@ class FoodsController < ApplicationController
   
     def new
       @food = Food.new
+      @user = current_user
     end
   
     def create
-      food = food.create(food_params)
+      food = Food.create(food_params)
       redirect_to food_path(food)
     end
 

@@ -11,13 +11,13 @@ Rails.application.routes.draw do
     resources :foods#, :only [:new, :create, :edit, :update, :destroy]
   end
 
-  resources :foods, only: [:show, :index] do 
+  resources :foods, only: [:show, :index, :create] do 
     post 'add', on: :member
   end
 
   get '/signin', to: 'sessions#new', as: 'signin'
   post '/session', to: 'sessions#create', as: 'session'
-  delete '/session', to: 'sessions#destroy'
+  get '/session', to: 'sessions#destroy', as: 'logout'
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
