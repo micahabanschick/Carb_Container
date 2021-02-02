@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :edit, :update, :destroy]
 
   resources :users, only: [:show] do 
+    get 'goodnight', on: :member
     resources :foods#, :only [:new, :create, :edit, :update, :destroy]
   end
 

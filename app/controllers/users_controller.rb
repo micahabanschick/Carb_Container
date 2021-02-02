@@ -33,6 +33,12 @@ class UsersController < ApplicationController
       user.update(user_params)
       redirect_to user_path(user)
     end 
+
+    def goodnight
+      user = User.find_by(id: params[:id])
+      user.user_foods.destroy_all
+      redirect_to user_path(user)
+    end
   
     private
     def user_params

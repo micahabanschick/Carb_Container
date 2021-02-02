@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 ruby '2.6.1'
 
+# gem 'tux'
+gem 'pry'
 gem "database_cleaner"
 gem "rspec-rails"
 gem "rack_session_access"

@@ -30,31 +30,31 @@ class User < ApplicationRecord
 
     def current_carbs
         carbs = 0
-        self.foods.each{|food| carbs + food.carb_count}
+        self.foods.each{|food| carbs += food.carb_count}
         carbs 
     end 
 
     def current_proteins
         proteins = 0
-        self.foods.each{|food| proteins + food.protein_count}
+        self.foods.each{|food| proteins += food.protein_count}
         proteins 
     end 
 
     def current_fibers
         fibers = 0
-        self.foods.each{|food| fibers + food.fiber_count}
+        self.foods.each{|food| fibers += food.fiber_count}
         fibers 
     end 
 
     def current_fats
         fats = 0
-        self.foods.each{|food| fats + food.fat_count}
+        self.foods.each{|food| fats += food.fat_count}
         fats 
     end 
 
     def current_calories
         calories = 0
-        self.foods.each{|food| calories + food.calorie_count}
+        self.foods.each{|food| calories += food.calorie_count}
         calories 
     end 
 end
