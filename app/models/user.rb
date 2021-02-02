@@ -5,6 +5,13 @@ class User < ApplicationRecord
     has_many :days 
     has_many :exercises, through: :days
     has_many :meals 
+    validates :name, presence: true
+    validates :password, presence: true
+    validates :sex, presence: true
+    validates :height, presence: true
+    validates :weight, presence: true
+    validates :lifestyle, presence: true
+    validates :age, presence: true
 
     def bmr
         if self.sex == "M"
