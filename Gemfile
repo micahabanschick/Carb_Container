@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 
 ruby '2.6.1'
 
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails'
 # gem 'tux'
 gem 'pry'
 gem "database_cleaner"
