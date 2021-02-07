@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get '/signin', to: 'sessions#new', as: 'signin'
   post '/session', to: 'sessions#create', as: 'session'
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   get '/session', to: 'sessions#destroy', as: 'logout'
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
