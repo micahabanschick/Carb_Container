@@ -6,12 +6,12 @@ class User < ApplicationRecord
     has_many :exercises, through: :days
     has_many :meals 
     validates :name, presence: true
-    validates :password, presence: true
+    validates :password, length: { minimum: 3 }
     validates :sex, presence: true
-    validates :height, presence: true
-    validates :weight, presence: true
+    validates :height, numericality: { greater_than: 0 }
+    validates :weight, numericality: { greater_than: 0 }
     validates :lifestyle, presence: true
-    validates :age, presence: true
+    validates :age, numericality: { greater_than: 0 }
 
     def bmr
         if self.sex == "M"
