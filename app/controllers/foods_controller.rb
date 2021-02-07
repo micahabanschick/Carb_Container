@@ -14,8 +14,12 @@ class FoodsController < ApplicationController
     end
   
     def create
-      food = Food.create(food_params)
-      redirect_to food_path(food)
+      @food = Food.new(food_params)
+      if @food.save
+        redirect_to food_path(@food)
+      else
+        render 'new'
+      end
     end
 
     def add

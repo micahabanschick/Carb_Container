@@ -1,31 +1,53 @@
 <%= form_for([@user, @food]) do |f| %>
+
+  <% if @food.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@food.errors.count, "error") %> prohibited this food from being saved:
+      </h2>
+
+      <ul>
+      <% @food.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="form-group">
     <%= f.label :name %><br>
     <%= f.text_field :name, class: "form-control" %></div>
+  <br>
 
   <div class="form-group">
     <%= f.label :brand, "Brand" %><br>
     <%= f.text_field :brand, class: "form-control" %></div>
+  <br>
 
   <div class="form-group">
     <%= f.label :carb_count, "Carbs (g)" %><br>
     <%= f.number_field :carb_count, class: "form-control" %></div>
+  <br>  
 
   <div class="form-group">
     <%= f.label :fiber_count, "Fiber (g)" %><br>
     <%= f.number_field :fiber_count, class: "form-control" %></div>
+  <br>
 
   <div class="form-group">
     <%= f.label :protein_count, "Protein (g)" %><br>
     <%= f.number_field :protein_count, class: "form-control" %></div>
+  <br>
 
-    <div class="form-group">
+  <div class="form-group">
     <%= f.label :fat_count, "Fat (g)" %><br>
     <%= f.number_field :fat_count, class: "form-control" %></div>
+  <br>
 
-    <div class="form-group">
+  <div class="form-group">
     <%= f.label :calorie_count, "Calories (kcal)" %><br>
     <%= f.number_field :calorie_count, class: "form-control" %></div>
+  <br>
 
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
