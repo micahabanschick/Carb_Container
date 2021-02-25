@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :foods#, :only [:new, :create, :edit, :update, :destroy]
   end
 
-  resources :foods, only: [:show, :index, :create] do 
+  resources :foods, only: [:show, :index, :create, :update] do 
     post 'add', on: :member
   end
 
