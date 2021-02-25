@@ -2,6 +2,19 @@
 
 <p><%= link_to 'Add New Food', new_user_food_path(current_user) %></p>
 
+<h2>Keto Friendly Foods</h2>
+
+<% if @foods.keto_friendly.empty? %>
+  <p>None</p>
+<% else %>
+  <% @foods.keto_friendly.each do |food| %>
+    <p><%= link_to food.name, user_food_path(current_user, food) %></p>
+    <br>
+  <% end %>
+<% end %>
+
+<h2>All Foods</h2>
+
 <% @foods.each do |food| %>
   <p><%= link_to food.name, user_food_path(current_user, food) %></p>
   <br>
