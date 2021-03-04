@@ -7,6 +7,7 @@
     <%= form_for @user_food, :url => add_food_path do |f| %>
         <%= f.hidden_field :user_id %><br />
         <%= f.hidden_field :food_id %><br />
+        <%= f.number_field :quantity %><br />
         <%= f.submit "Add", class:"btn btn-light" %>
     <% end %>
     <p><%= link_to 'Back', user_foods_path(current_user), class: "btn btn-primary btn-light" %></p>

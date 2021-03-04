@@ -11,3 +11,9 @@
 <h3>Current Fibers: <%= @user.current_macros('fiber_count') %></h3>
 <h3>Current Fats: <%= @user.current_macros('fat_count') %></h3>
 <h3>Current Calories: <%= @user.current_macros('calorie_count') %></h3>
+
+<% @user.user_foods.each do |user_food| %>
+<h3><%= user_food.food.name %></h3>
+<h3><%= user_food.quantity %></h3>
+<br>
+<% end %>

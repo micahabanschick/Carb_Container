@@ -24,10 +24,11 @@ class FoodsController < ApplicationController
 
     def add
       # binding.pry
-      user_food = UserFood.create(user_id: current_user.id, food_id: params[:user_food][:food_id])
+      user_food = UserFood.create(user_id: current_user.id, food_id: params[:user_food][:food_id], quantity: params[:user_food][:quantity])
       message = user_food.consume
       user_food.consumed = true 
       redirect_to user_path(user_food.user), flash: { message: message }
+      
     end 
   
     def edit
